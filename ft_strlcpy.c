@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:20:22 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/27 12:49:54 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
+	len = ft_strlen(src);
+	if (dstsize > len + 1)
+		ft_memcpy(dst, src, dstsize)
+	else if (dstsize != 0)
+    {
+        ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	return (i);
+	return (len);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
-}
-*/

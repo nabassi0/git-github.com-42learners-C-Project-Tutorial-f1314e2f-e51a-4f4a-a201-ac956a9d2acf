@@ -1,35 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:20:22 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 12:35:20 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/27 12:43:46 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
-}
-*/
+ft_strlcat()

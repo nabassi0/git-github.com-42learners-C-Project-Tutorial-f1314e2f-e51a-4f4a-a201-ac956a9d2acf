@@ -6,11 +6,22 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 12:03:37 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/24 14:00:44 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/04/27 12:19:47 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int a)
 {
-	return ()
+	return ((a >= 0 && a <= 255) || ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')));
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int a = 9;
+	printf("%d", ft_isalnum(a));
+}
+*/

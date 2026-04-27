@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/25 14:43:22 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:20:09 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/25 15:51:33 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/27 12:21:12 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	unsigned char *temp_dest;
-	const unsigned char *temp_src;
+	unsigned char		*temp_dest;
+	unsigned const char	*temp_src;
+	size_t				i;
 
 	temp_dest = (unsigned char *) dest;
-	temp_src = (const unsigned char *) src;
+	temp_src = (unsigned char *) src;
 	if (!dest || !src)
 		return (0);
-	while (size > 0)
+	i = 0;
+	if (dest > src)
 	{
-		*temp_dest++ = *temp_src++;
-		size--;
+		while (size > 0)
+		{
+			temp_dest[size] = temp_src[size];
+			size--;
+		}
+	}
+	else
+	{
+		while (i < size)
+		{
+			temp_dest[i] = temp_src[i];
+			i++;
+		}
 	}
 	return (dest);
 }
@@ -32,9 +45,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 #include <stdio.h>
 int	main(void)
 {
-	int	dest = 20;
-	int	src = 10;
+	char *src = "ABCDE";
 
-	printf("%d", ft_memcpy(dest, src, sizeof(int)))
+	printf("%s\n", src);
+	printf("%s\n", ft_memmove(src + 1, src, 3));
+	return (0);
 }
 */

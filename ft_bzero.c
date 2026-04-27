@@ -6,11 +6,13 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 12:52:44 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/25 13:45:04 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/04/27 12:19:43 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char *temp_s;
 

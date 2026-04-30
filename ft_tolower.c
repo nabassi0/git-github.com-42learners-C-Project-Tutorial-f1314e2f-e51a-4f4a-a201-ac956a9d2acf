@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:39:26 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:21:48 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/27 20:25:18 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_tolower(int c)
 {
-	size_t	len;
-
-	len = ft_strlen(src);
-	if (dstsize > len + 1)
-		ft_memcpy(dst, src, dstsize);
-	else if (dstsize != 0)
-    {
-        ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
-	}
-	return (len);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int c = 65;
+	printf("%d", ft_tolower(c));
+	return (0);
+}
+*/

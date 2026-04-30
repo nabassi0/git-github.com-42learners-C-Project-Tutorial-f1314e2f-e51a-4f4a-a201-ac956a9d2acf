@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:38:05 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:21:06 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/28 22:55:09 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+void	*ft_memchr(const void *memBlock, int searchedChar, size_t size)
 {
-	int	i;
-
+	unsigned char 	*temp_memBlock;
+	size_t			i;
+	
+	temp_memBlock = (unsigned char *) memBlock;
 	i = 0;
-	while (*str)
+	while (i < size)
 	{
+		if (temp_memBlock[i] == (unsigned char) searchedChar)
+			return ((void *) &temp_memBlock[i]);
 		i++;
-		str++;
 	}
-	return (i);
+	return (NULL);
 }
-/*
-#include <stdio.h>
+/**e <stdio.h>
 
 int	main(void)
 {
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
+	char	*memBlock = "bonjour";
+	const unsigned int size = 7;
+
+	printf("%s", (char *)ft_memchr(memBlock, 106, size));
+	return (0);
 }
 */

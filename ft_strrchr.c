@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:38:05 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:21:23 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/28 12:38:03 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+char	*ft_strrchr(const char *str, int searchedChar)
 {
-	int	i;
+	unsigned int	i;	
+	char			*cur_adr;		
 
+	cur_adr = 0;
 	i = 0;
-	while (*str)
+	while (str[i] != '\0')
 	{
+		if ((char) searchedChar == str[i])
+			cur_adr = ((char *) &str[i]);
 		i++;
-		str++;
 	}
-	return (i);
+	if (str[i] == (char) searchedChar)
+		return ((char *) &str[i]);
+	else
+		return (cur_adr);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
+	const char	*str = "bonjour";
+	int searchedChar = 111;
+	printf("%s", ft_strrchr(str, searchedChar));
+	return (0);
 }
 */

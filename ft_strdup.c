@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:39:26 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/28 23:01:50 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/29 23:07:31 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strdup(const char *s1)
 {
-	size_t	len;
+	char	*dup;
+	int		i;
 
-	len = ft_strlen(src);
-	if (dstsize > len + 1)
-		ft_memcpy(dst, src, dstsize);
-	else if (dstsize != 0)
-    {
-        ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+	dup = malloc(ft_strlen(s1) + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dup[i] = s1[i];
+		i++;
 	}
-	return (len);
+	dup[i] = '\0';
+	return ((char *)dup);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	const char	*s1 = "hello";
+	printf("%s", ft_strdup(s1));
+	return (0);
+}
+*/

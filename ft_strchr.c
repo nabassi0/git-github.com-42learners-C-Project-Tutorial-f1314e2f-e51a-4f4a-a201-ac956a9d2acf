@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:39:26 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:21:38 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/28 12:11:57 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strchr(const char *str, int searchedChar)
 {
-	size_t	len;
+	unsigned int	i;			
 
-	len = ft_strlen(src);
-	if (dstsize > len + 1)
-		ft_memcpy(dst, src, dstsize);
-	else if (dstsize != 0)
-    {
-        ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((char) searchedChar == str[i])
+			return ((char *) &str[i]);
+		i++;
 	}
-	return (len);
+	if (str[i] == (char) searchedChar)
+		return ((char *) &str[i]);
+	return (NULL);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	const char	*str = "bonjour";
+	int searchedChar = 106;
+	printf("%s", ft_strchr(str, searchedChar));
+	return (0);
+}
+*/

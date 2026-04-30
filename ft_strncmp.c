@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:38:05 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:21:15 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/28 19:56:46 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+int	ft_strncmp(const char *first, const char *second, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*str)
+	while ((first[i] || second[i]) && i < len)
 	{
+		if ((unsigned char)first[i] != (unsigned char)second[i])
+			return ((unsigned char)first[i] - (unsigned char)second[i]);
 		i++;
-		str++;
 	}
-	return (i);
+	return (0);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
+	const char	*first = "bénzour";
+	const char	*second = "bonjour";
+
+	printf("%d", ft_strncmp(first, second, 7));
+	return (0);
 }
 */

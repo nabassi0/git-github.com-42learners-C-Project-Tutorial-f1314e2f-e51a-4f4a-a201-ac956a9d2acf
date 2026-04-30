@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:39:26 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 16:25:01 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/27 20:17:44 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_toupper(int c)
 {
-	size_t	len;
-
-	len = ft_strlen(src);
-	if (dstsize > len + 1)
-		ft_memcpy(dst, src, dstsize);
-	else if (dstsize != 0)
-    {
-        ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
-	}
-	return (len);
+	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
+		return (c - 32);
+	return (c);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int c = 122;
+	printf("%d", ft_toupper(c));
+}
+*/

@@ -1,35 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/24 19:51:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 23:38:05 by nabassi          ###   ########.fr       */
+/*   Created: 2026/04/27 20:20:24 by nabassi           #+#    #+#             */
+/*   Updated: 2026/04/29 16:29:47 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
+	int	sign;
+	int	result;
 
 	i = 0;
-	while (*str)
-	{
+	sign = 1;
+	result = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-		str++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (i);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (sign * result);
 }
-/*
+/**
 #include <stdio.h>
 
 int	main(void)
 {
-	char *c = "bonjourcv";
-	printf("%d", ft_strlen(c));
+	const char	*str = "--90";
+	printf("%d", ft_atoi(str));
+	return (0);
 }
 */

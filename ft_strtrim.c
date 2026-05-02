@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
+/*   By: nabassi <nabassi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 13:33:42 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/30 13:34:03 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/02 11:34:22 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set)
+{
+    
+}

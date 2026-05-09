@@ -6,25 +6,23 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 14:43:22 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:20:09 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/03 00:02:21 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *temp_dest;
-	const unsigned char *temp_src;
+	int		i;
 
-	temp_dest = (unsigned char *) dest;
-	temp_src = (const unsigned char *) src;
-	if (!dest || !src)
-		return (0);
-	while (size > 0)
+	i = 0;
+	if (!dest && !src)
+		return (dest);
+	while (i < (int)n)
 	{
-		*temp_dest++ = *temp_src++;
-		size--;
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 20:16:56 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:19:37 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/09 22:34:29 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *pointer, int value, size_t count)
 {
-	unsigned char *temp_pointer;
+	unsigned char	*temp_pointer;
 
 	temp_pointer = (unsigned char *) pointer;
 	while (count > 0)
@@ -22,5 +22,5 @@ void	*ft_memset(void *pointer, int value, size_t count)
 		*temp_pointer++ = (unsigned char) value;
 		count--;
 	}
-	return pointer;
+	return (pointer);
 }

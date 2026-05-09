@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 12:52:44 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/27 12:19:43 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/09 13:35:41 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *temp_s;
+	unsigned char	*temp_s;
 
 	temp_s = (unsigned char *) s;
 	while (n > 0)

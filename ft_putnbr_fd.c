@@ -6,10 +6,31 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 13:38:49 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/30 13:38:56 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/09 13:34:35 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	l;
+	char	a;
+
+	l = n;
+	if (l < 0)
+	{
+		write(fd, '-', 1);
+		l *= -1;
+	}
+	if (l >= 10)
+		ft_putnbr_fd((n / 10), fd);
+	a = (n % 10) + '0';
+	write (fd, &a, 1);
+}
+/*
+int	main(void)
+{
+	ft_putnbr(42, 1);
+}
+*/

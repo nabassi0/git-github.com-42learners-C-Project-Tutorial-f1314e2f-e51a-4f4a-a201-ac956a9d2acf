@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 20:20:36 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/29 14:26:08 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/09 13:23:13 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 	j = 0;
 	while (haystack[i] && i < len)
 	{
-		  while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
-        {
-            j++;
-            if (needle[j] == 0)
-                return ((char *) haystack + i);
-        }
-        i++;
-        j = 0;
-    }
-    return (0);
+		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		{
+			j++;
+			if (needle[j] == 0)
+				return ((char *) haystack + i);
+		}
+		i++;
+		j = 0;
+	}
+	return (0);
 }
 /**
 #include <stdio.h>

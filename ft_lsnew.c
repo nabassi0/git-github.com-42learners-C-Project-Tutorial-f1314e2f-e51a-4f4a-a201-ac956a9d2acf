@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lsnew.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 13:38:49 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/10 19:57:21 by nabassi          ###   ########.fr       */
+/*   Created: 2026/05/09 23:27:57 by nabassi           #+#    #+#             */
+/*   Updated: 2026/05/10 19:51:18 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	long	l;
-	char	a;
+	t_list	*node;
 
-	l = n;
-	if (l < 0)
-	{
-		write(fd, "-", 1);
-		l *= -1;
-	}
-	if (l >= 10)
-		ft_putnbr_fd((n / 10), fd);
-	a = (n % 10) + '0';
-	write (fd, &a, 1);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	ft_putnbr(42, 1);
+	t_list	*a = ft_lstnew("Coucou ");
+	t_list	*b = ft_lstnew("toi, ");
+	t_list	*c = ft_lstnew("comment tu vas ?");
+
+	a->next = b;
+	b->next = c;
+	t_list	*current = a;
+	while (current)
+	{
+		printf("%s", (char *) current->content);
+		current = current->next;
+	}
 }
 */

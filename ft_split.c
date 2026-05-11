@@ -38,13 +38,11 @@ int	ft_count_words(const char *s, char c)
 int	ft_word_len(const char *s, char c, int start)
 {
 	int	i;
-	int	len;
 
 	i = start;
 	while (s[i] && s[i] != c)
 		i++;
-	len = i - start;
-	return (len);
+	return (i - start);
 }
 
 char	**ft_split(const char *s, char c)
@@ -52,28 +50,25 @@ char	**ft_split(const char *s, char c)
 	char	**arr_s;
 	int		i;
 	int		j;
-	int		start;
 	int		len;
 
 	if (!s)
 		return (NULL);
-	arr_s = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
+	arr_s = ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
+	if (!arr_s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	start = 0;
-	len = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
-		else if (s[i] != c)
-		{
-			start = i;
-			len = ft_word_len(s, c, start);
-			arr_s[j] = ft_substr(s, start, len);
-			j++;
-			i = i + len;
-		}
+		if (!s[i])
+			break ;
+		len = ft_word_len(s, c, i);
+		arr_s[j] = ft_substr(s, i, len);
+		j++;
+		i += len;
 	}
 	arr_s[j] = NULL;
 	return (arr_s);

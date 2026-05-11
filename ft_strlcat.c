@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 12:35:20 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/09 22:36:05 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/11 22:03:33 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
 	if (dst_len == dstsize)
 		return (dst_len + src_len);
 	if (dstsize - dst_len > src_len)

@@ -6,10 +6,13 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 13:36:32 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/30 13:36:58 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/11 22:04:03 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

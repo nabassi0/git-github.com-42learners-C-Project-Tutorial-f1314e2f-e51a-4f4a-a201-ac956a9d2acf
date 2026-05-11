@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 15:51:33 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/03 00:03:59 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/11 22:40:41 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,13 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 
 	temp_dest = (unsigned char *) dest;
 	temp_src = (unsigned char *) src;
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	i = 0;
-	if (dest > src)
+	if (temp_dest > temp_src)
 	{
-		while (size > 0)
-		{
+		while (size-- > 0)
 			temp_dest[size] = temp_src[size];
-			size--;
-		}
 	}
 	else
 	{

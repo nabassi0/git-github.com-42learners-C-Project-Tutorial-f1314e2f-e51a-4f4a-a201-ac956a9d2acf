@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 20:45:17 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/09 13:26:13 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/10 20:44:30 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 
 	len = ft_strlen(src);
-	if (dstsize > len + 1)
-		ft_memcpy(dst, src, dstsize);
+	if (dstsize > len)
+		ft_memcpy(dst, src, len + 1);
 	else if (dstsize != 0)
 	{
 		ft_memcpy(dst, src, dstsize - 1);

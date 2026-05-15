@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 11:56:57 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/15 22:02:58 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/15 23:02:16 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isdigit(int a);
 int		ft_isalnum(int a);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-size_t		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *pointer, int value, size_t count);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t size);

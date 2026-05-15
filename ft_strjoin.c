@@ -6,7 +6,7 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 15:42:05 by nabassi           #+#    #+#             */
-/*   Updated: 2026/04/30 18:08:25 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/15 22:03:59 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 	char	*s_cat;
-	int		total_len;
+	size_t	total_len;
 
 	if (!s1 || !s2)
 		return (NULL);

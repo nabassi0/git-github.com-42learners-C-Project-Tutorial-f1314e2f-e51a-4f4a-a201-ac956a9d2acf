@@ -6,13 +6,13 @@
 /*   By: nabassi <nabassi>                          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 13:34:41 by nabassi           #+#    #+#             */
-/*   Updated: 2026/05/08 21:07:44 by nabassi          ###   ########.fr       */
+/*   Updated: 2026/05/15 22:01:22 by nabassi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_digits(int n)
+static int	ft_count_digits(int n)
 {
 	int	i;
 
@@ -46,8 +46,8 @@ char	*ft_itoa(int n)
 		n *= -1;
 	}
 	str = ft_calloc(len, sizeof(char));
-	i = len - 1;
-	while (i > 0)
+	i = len - 2;
+	while (i >= 0)
 	{
 		str[i] = (n % 10) + '0';
 		n /= 10;
